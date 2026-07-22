@@ -36,16 +36,17 @@ housing = pd.read_csv("Ames_Housing_Data1.tsv", sep="\t")
 
 #Correlation
 house_num = housing.select_dtypes(include = ['float64','int64'])
+print(house_num)
 house_num_corr = house_num.corr()['SalePrice'][:-1]
 top_features = house_num_corr[abs(house_num_corr) > 0.5].sort_values(ascending=False) 
-#print("There is {} strongly correlated values with SalePrice:\n{}".format(len(top_features), top_features))
-"""
+print("There is {} strongly correlated values with SalePrice:\n{}".format(len(top_features), top_features))
+
 for i in range(0, len(house_num.columns), 5):
     sns.pairplot(data=house_num,
                 x_vars=house_num.columns[i:i+5],
                 y_vars=['SalePrice'],)
-    #plt.show()
-"""
+    plt.show()
+
 
 #Log transformation
 sp_untransformed = sns.histplot(
@@ -63,4 +64,4 @@ sp_transformed = sns.histplot(log_transformed,
                               kde = True)
 
 print("Skewness: %f" % (log_transformed).skew())
-plt.show()
+#plt.show()
