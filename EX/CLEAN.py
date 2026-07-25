@@ -61,3 +61,4 @@ axes[1, 1].tick_params(axis='x', rotation=30)
 
 plt.tight_layout()
 plt.show()
+df.to_csv("Cleaned_Employee_dataset.csv", index=False)
