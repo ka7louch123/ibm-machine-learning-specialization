@@ -55,7 +55,7 @@ sp_untransformed = sns.histplot(
     kde=True
 )
 
-plt.show()
+#plt.show()
 
 #print("Skewness: %f" % housing['SalePrice'].skew())
 
@@ -90,7 +90,7 @@ print(dup_removed)
 print(housing.index.is_unique)
 
 #ex3
-removed_sub = housing[housing.drop_duplicates(subset = ["Order"])]
+removed_sub = housing.drop_duplicates(subset = ["Order"])
 print(removed_sub)
 
 total = housing.isnull().sum().sort_values(ascending=False)
