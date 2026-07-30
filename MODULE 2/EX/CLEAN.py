@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib .pylab as plt
 import seaborn as sns
 
-df = pd.read_csv("EX/Messy_Employee_dataset.csv")
+df = pd.read_csv("MODULE 2/EX/Messy_Employee_dataset.csv")
 
 print("head",df.head())
 print("shape",df.shape)
